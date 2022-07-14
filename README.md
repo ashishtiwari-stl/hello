@@ -1,2 +1,3 @@
 # hello
-first repository
+first repository okkkk
+git is easy

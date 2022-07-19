@@ -1,25 +1,13 @@
-pipeline { 
-    agent any 
-    stages { 
-        stage('Build') { 
-            steps { 
-               echo 'This is a minimal pipeline.' 
-            }
-        }
-        stage('Test') { 
-            steps { 
-               echo 'Testing .' 
-            }
-        }
-        stage('Package') { 
-            steps { 
-               echo 'Packaging.' 
-            }
-        }
-        stage('Deploy') { 
-            steps { 
-               echo 'Depolying.' 
+pipeline {
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
             }
         }
     }
 }
+
